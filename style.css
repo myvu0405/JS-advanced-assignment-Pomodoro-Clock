@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    width: 80%;
+    margin: 0 auto;
+    background: darkgrey;
+    
+}
+header{
+    height: 150px;
+}
+#header-title{
+    text-align: center;
+    height: 50px;
+    width: 80%;
+    /* padding: 20px; */
+    /* display: block; */
+    margin: auto;
+}
+#timerBar{
+    width: 300px;
+    height: 100px;
+    margin-top:30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.labels{
+    font-size: x-large;
+    font-weight: bold;
+    align-self: center;
+}
+.timers{
+    align-items: center;
+    width: 40px;
+    margin: auto;
+    border: 1px blue solid;
+}
+#wTimer{
+    display: flex;
+}
+#bTimer{
+    display: flex;
+}
+#bttBar{
+    margin: auto;
+    width: 170px;
+    text-align: center;
+    
+}
+.buttons{
+    width: 50px;
+}
