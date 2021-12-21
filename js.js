@@ -2,6 +2,17 @@ let startBtt=document.getElementById('startBtt');
 let resetBtt=document.getElementById('resetBtt');
 let pauseBtt=document.getElementById('pauseBtt');
 
+let workAddBtt=document.getElementById('wIncBtt');
+let workMinusBtt=document.getElementById('wDecBtt');
+let breakAddBtt=document.getElementById('bIncBtt');
+let breakMinusBtt=document.getElementById('bDecBtt');
+
+workAddBtt.addEventListener('click', addMinuteWork);
+workMinusBtt.addEventListener('click', minusMinuteWork);
+
+breakAddBtt.addEventListener('click',addMinuteBreak);
+breakMinusBtt.addEventListener('click',minusMinuteBreak);
+
 let myInterval;
 let circles =parseInt(document.getElementById('counter').innerText);
 
@@ -11,10 +22,61 @@ startBtt.addEventListener('click', workCountdown);
 resetBtt.addEventListener('click', reset);
 pauseBtt.addEventListener('click', stopTimer);
 
+function addMinuteWork(){
+    if (myInterval){
+        console.log(myInterval=='');
+        console.log(myInterval);
+        reset();
+    }
+    let currentMin=parseInt(document.getElementById('wMinute').innerHTML);
+    
+    currentMin++;
+    
+    document.getElementById('wMinute').innerHTML=currentMin;
 
+}
+function minusMinuteWork(){
+    if (myInterval){
+        
+        reset();
+    }
+    let currentMin=parseInt(document.getElementById('wMinute').innerText);
+    currentMin--;
+    if (currentMin >=5) {
+        document.getElementById('wMinute').innerHTML=currentMin;
+    }
+
+}
+
+function addMinuteBreak(){
+    if (myInterval){
+        
+        reset();
+    }
+    let currentMin=parseInt(document.getElementById('bMinute').innerHTML);
+    
+    currentMin++;
+    
+    document.getElementById('bMinute').innerHTML=currentMin;
+
+}
+
+function minusMinuteBreak(){
+    if (myInterval){
+        
+        reset();
+    }
+    let currentMin=parseInt(document.getElementById('bMinute').innerText);
+    currentMin--;
+    if (currentMin >=1) {
+        document.getElementById('bMinute').innerHTML=currentMin;
+    }
+
+}
 
 function stopTimer() {
     clearInterval(myInterval);
+    myInterval=undefined;
 }
 
 function breakCountdown(){
